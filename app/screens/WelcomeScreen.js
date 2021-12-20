@@ -7,7 +7,7 @@ function WelcomeScreen(props) {
             {/* <Text style={styles.heading}>HDPS</Text> */}
             <Image 
             style={styles.logo}
-            source={require("../assets/applogo.png")}
+            source={require("../assets/HDPS.png")}
             fadeDuration={1000}
              />
         </View>
