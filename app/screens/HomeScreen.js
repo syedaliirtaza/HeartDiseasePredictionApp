@@ -4,11 +4,6 @@ import { View, StyleSheet, Text, Button, Pressable} from 'react-native';
 function HomeScreen(props) {
     return (
         <View style={styles.welcomeContainer}>
-
-            <View style={styles.navbarContainer}>
-                <Text>Home</Text>
-            </View>
-
             <View style={styles.textContainer}>
                 <Text style={styles.headingTitle}>Click here to start</Text>
                 <Text style={styles.headingDesc}>Prediction</Text>
@@ -38,13 +33,7 @@ const styles = StyleSheet.create({
         display: "flex",
         justifyContent: "center",
         flexDirection: "row"
-    },
-    navbarContainer: {
-        display: "flex",
-        justifyContent: "center",
-        position: "absolute",
-        top: -200
-    },  
+    }, 
     textContainer: {
         display: "flex",
     },

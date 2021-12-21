@@ -1,14 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import HomeScreen from './app/screens/HomeScreen';
+import PredictionScreen from './app/screens/PredictionScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 
 export default function App() {
   return (
     <View style={styles.background}>
       {/* <WelcomeScreen /> */}
-      <HomeScreen />
+      {/* <HomeScreen /> */}
+      <PredictionScreen />
     </View>  
   );
 }
@@ -21,13 +22,3 @@ const styles = StyleSheet.create({
       alignItems: "center"
   }
 })
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: 'lightblue',
-//     // paddingTop: Platform.OS === 'android' ? 50 : 0
-//     justifyContent: "center",
-//     alignItems: "center"
-//   },
-// });
