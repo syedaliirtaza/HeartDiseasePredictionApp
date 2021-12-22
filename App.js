@@ -31,13 +31,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-
-// const styles = StyleSheet.create({
-//   background: {
-//       backgroundColor: "white",
-//       flex: 1,
-//       justifyContent: "center",
-//       alignItems: "center"
-//   }
-// })

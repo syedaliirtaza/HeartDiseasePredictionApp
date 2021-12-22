@@ -20,17 +20,25 @@ const styles = StyleSheet.create({
     welcomeContainer: {
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        flex: 1
     },
     logo: {
         height: 350,
         width: 350
     },
     button: {
-        backgroundColor: "pink"
+        borderWidth: 0.2,
+        borderColor: "gray",
+        height: 30,
+        width: "auto",
+        borderRadius: 20
     },
     buttonText: {
-        color: "black"
+        color: "#A13333",
+        fontSize: 12,
+        fontWeight: "bold",
+        padding: 5
     }
     
 })
