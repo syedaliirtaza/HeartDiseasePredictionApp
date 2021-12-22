@@ -1,24 +1,43 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import HomeScreen from './app/screens/HomeScreen';
-import PredictionScreen from './app/screens/PredictionScreen';
-import WelcomeScreen from './app/screens/WelcomeScreen';
+import { StyleSheet, } from 'react-native';
+import Home from './app/screens/Home';
+import Prediction from './app/screens/Prediction';
+import Welcome from './app/screens/Welcome';
+import Tips from "./app/screens/Tips";
+import {enableScreens} from "react-native-screens";
+
+enableScreens();
+
+import { NavigationContainer } from '@react-navigation/native';
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
+
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.background}>
-      {/* <WelcomeScreen /> */}
-      {/* <HomeScreen /> */}
-      <PredictionScreen />
-    </View>  
+    <NavigationContainer>
+         <Stack.Navigator>
+              <Stack.Screen name="Welcome" component={Welcome} options={{headerShown: false}} />
+              <Stack.Screen name="Home" component={Home} />
+              <Stack.Screen
+                options={{headerLargeTitle: true}}
+              name="Prediction" component={Prediction} />
+              <Stack.Screen 
+                options={{headerLargeTitle: true}}
+                name="Tips" component={Tips}
+              />
+         </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  background: {
-      backgroundColor: "#FAFCFC",
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center"
-  }
-})
+
+// const styles = StyleSheet.create({
+//   background: {
+//       backgroundColor: "white",
+//       flex: 1,
+//       justifyContent: "center",
+//       alignItems: "center"
+//   }
+// })

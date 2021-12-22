@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextInput ,View, StyleSheet, Text, ScrollView} from 'react-native';
 
-function PredictionScreen(props) {
+function Prediction(props) {
 
     const [age, setAge] = useState('');
     const [ sex, setSex ] = useState('');
@@ -28,7 +28,7 @@ function PredictionScreen(props) {
                     />
                 </View>
             
-             
+                         
         </View>
     );
 }
@@ -75,4 +75,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default PredictionScreen;
+export default Prediction;

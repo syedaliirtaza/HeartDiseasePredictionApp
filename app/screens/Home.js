@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { View, StyleSheet, Text, Button, Pressable} from 'react-native';
 
-function HomeScreen(props) {
+function Home({navigation}) {
     return (
         <View style={styles.welcomeContainer}>
             <View style={styles.textContainer}>
@@ -15,10 +15,10 @@ function HomeScreen(props) {
                     title='Get Health Tips'
                     onPress={() => alert("button is pressed")}
                 /> */}
-                <Pressable style={styles.predictionButton} onPress={()=> alert("pressable pressed")}>
+                <Pressable style={styles.predictionButton} onPress={()=> navigation.navigate('Prediction')}>
                     <Text style={styles.text}>Check My Heart Health</Text>
                 </Pressable>
-                <Pressable style={styles.tipsButton} onPress={()=> alert("pressable pressed")}>
+                <Pressable style={styles.tipsButton} onPress={()=> navigation.navigate('Tips')}>
                     <Text style={styles.text}>Get Health Tips</Text>   
                 </Pressable>
       
@@ -32,7 +32,9 @@ const styles = StyleSheet.create({
     welcomeContainer: {
         display: "flex",
         justifyContent: "center",
-        flexDirection: "row"
+        alignItems: "center",
+        flexDirection: "row",
+        flex: 1
     }, 
     textContainer: {
         display: "flex",
@@ -69,4 +71,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default HomeScreen;
+export default Home;
