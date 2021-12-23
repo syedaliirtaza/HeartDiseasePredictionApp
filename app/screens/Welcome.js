@@ -9,9 +9,12 @@ function WelcomeScreen({navigation}) {
             source={require("../assets/HDPS.png")}
             fadeDuration={5000}
              />
-             <Pressable style={styles.button} onPress={()=> navigation.navigate('Home')} >
+             <Pressable style={styles.button} onPress={()=> navigation.navigate('Login')} >
                  <Text style={styles.buttonText}>Get Started</Text>
              </Pressable>
+             <Pressable style={styles.creditsButton} onPress={()=> navigation.navigate('Credits')}>
+                    <Text style={styles.creditsText}>Credits</Text>   
+            </Pressable>
         </View>
     );
 }
@@ -39,6 +42,14 @@ const styles = StyleSheet.create({
         fontSize: 12,
         fontWeight: "bold",
         padding: 5
+    },
+    creditsButton: {
+        position: "absolute",
+        bottom: 30,
+    },
+    creditsText: {
+        fontSize: 12,
+        fontWeight: "bold"
     }
     
 })
