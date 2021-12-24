@@ -5,12 +5,12 @@ import * as firebase from "firebase";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "your key",
-  authDomain: "your domain",
-  projectId: "hdps-auth",
-  storageBucket: "your bucket",
-  messagingSenderId: "your id",
-  appId: "your appid"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 
 // Initialize Firebase
