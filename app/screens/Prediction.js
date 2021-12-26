@@ -1,22 +1,12 @@
 import React, { useState } from 'react';
 import { TextInput ,View, StyleSheet, Text, ScrollView, Pressable} from 'react-native';
+import { useSelector, useDispatch } from "react-redux";
+import { setName, setAge, setSex, setCp, setTrestbps, setChol, setFbs, setRestecg, setThalach, setExang, setLdpeak, setSlope, setCa, setThal } from "../redux/action";
 
 function Prediction({navigation}) {
 
-    const [name, setName] = useState('');
-    const [age, setAge] = useState('');
-    const [ sex, setSex ] = useState('');
-    const [ cp, setCp ] = useState('');
-    const [ trestbps, setTrestbps] = useState('');
-    const [chol, setChol] = useState('');
-    const [fbs, setFbs] = useState('');
-    const [restecg, setRestecg] = useState('');
-    const [thalach, setThalach] = useState('');
-    const [exang, setExang] = useState('');
-    const [ldpeak, setLdpeak] = useState('');
-    const [slope, setSlope] = useState('');
-    const [ca, setCa] = useState('');
-    const [thal, setThal] = useState('');
+    const {name, age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, ldpeak, slope, ca, thal} = useSelector( state => state.userReducer);
+    const dispatch = useDispatch();
   
 
     return (
@@ -34,8 +24,8 @@ function Prediction({navigation}) {
                             </Pressable>
                         <TextInput
                             style={styles.inputField}
-                            onChangeText={name => setName(name)}
-                            defaultValue={name}
+                            onChangeText={name => dispatch(setName(name))}
+                            defaultValue={name.toString()}
                             placeholderStyle={{color: "red"}}
                         />
                         <Text style={styles.inputTitle}>Please enter person's age</Text>
@@ -44,8 +34,8 @@ function Prediction({navigation}) {
                             </Pressable>
                         <TextInput
                             style={styles.inputField}
-                            onChangeText={age => setAge(age)}
-                            defaultValue={age}
+                            onChangeText={age => dispatch(setAge(age))}
+                            defaultValue={age.toString()}
                             keyboardType='numeric'
                         />
                         <Text style={styles.inputTitle}>Please enter person's sex</Text>
@@ -55,8 +45,8 @@ function Prediction({navigation}) {
                         <TextInput
                             style={styles.inputField}
                             keyboardType='numeric'
-                            onChangeText={sex => setSex(sex)}
-                            defaultValue={sex}
+                            onChangeText={sex => dispatch(setSex(sex))}
+                            defaultValue={sex.toString()}
                         />
                         <Text style={styles.inputTitle}>Person's chest pain</Text>
                         <Pressable onPress={()=>alert("1: typical angina, 2: atypical angina, 3: non-anginal pain, 4: asymptomatic")}>
@@ -64,8 +54,8 @@ function Prediction({navigation}) {
                             </Pressable>
                         <TextInput
                             style={styles.inputField}
-                            onChangeText={cp => setCp(cp)}
-                            defaultValue={cp}
+                            onChangeText={cp => dispatch(setCp(cp))}
+                            defaultValue={cp.toString()}
                             placeholderStyle={{color: "red"}}
                             keyboardType='numeric'
                         />
@@ -75,8 +65,8 @@ function Prediction({navigation}) {
                             </Pressable>
                         <TextInput
                             style={styles.inputField}
-                            onChangeText={trestbps => setTrestbps(trestbps)}
-                            defaultValue={trestbps}
+                            onChangeText={trestbps => dispatch(setTrestbps(trestbps))}
+                            defaultValue={trestbps.toString()}
                             keyboardType='numeric'
                         />
                         <Text style={styles.inputTitle}>Person's cholesterol</Text>
@@ -85,8 +75,8 @@ function Prediction({navigation}) {
                             </Pressable>
                         <TextInput
                             style={styles.inputField}
-                            onChangeText={chol => setChol(chol)}
-                            defaultValue={chol}
+                            onChangeText={chol => dispatch(setChol(chol))}
+                            defaultValue={chol.toString()}
                             keyboardType='numeric'
                         />
                         <Text style={styles.inputTitle}>Person's fasting blood sugar</Text>
@@ -95,8 +85,8 @@ function Prediction({navigation}) {
                             </Pressable>
                         <TextInput
                             style={styles.inputField}
-                            onChangeText={fbs => setFbs(fbs)}
-                            defaultValue={fbs}
+                            onChangeText={fbs => dispatch(setFbs(fbs))}
+                            defaultValue={fbs.toString()}
                             keyboardType='numeric'
                         />
                         <Text style={styles.inputTitle}>Resting electrocardiographic measurement</Text>
@@ -105,8 +95,8 @@ function Prediction({navigation}) {
                             </Pressable>
                         <TextInput
                             style={styles.inputField}
-                            onChangeText={restecg => setRestecg(restecg)}
-                            defaultValue={restecg}
+                            onChangeText={restecg => dispatch(setRestecg(restecg))}
+                            defaultValue={restecg.toString()}
                             keyboardType='numeric'
                         />
                         <Text style={styles.inputTitle}>Person's maximum heart rate achieved</Text>
@@ -115,8 +105,8 @@ function Prediction({navigation}) {
                             </Pressable>
                         <TextInput
                             style={styles.inputField}
-                            onChangeText={thalach => setThalach(thalach)}
-                            defaultValue={thalach}
+                            onChangeText={thalach => dispatch(setThalach(thalach))}
+                            defaultValue={thalach.toString()}
                             keyboardType='numeric'
                         />
                         <Text style={styles.inputTitle}>Exercise induced angina </Text>
@@ -125,8 +115,8 @@ function Prediction({navigation}) {
                             </Pressable>
                         <TextInput
                             style={styles.inputField}
-                            onChangeText={exang => setExang(exang)}
-                            defaultValue={exang}
+                            onChangeText={exang => dispatch(setExang(exang))}
+                            defaultValue={exang.toString()}
                             keyboardType='numeric'
                         />
                         <Text style={styles.inputTitle}>ST depression</Text>
@@ -135,9 +125,8 @@ function Prediction({navigation}) {
                             </Pressable>
                         <TextInput
                             style={styles.inputField}
-                            onChangeText={ldpeak => setLdpeak(ldpeak)}
-                            defaultValue={ldpeak}
-                            keyboardType='numeric'
+                            onChangeText={ldpeak => dispatch(setLdpeak(ldpeak))}
+                            defaultValue={ldpeak.toString()}
                         />
                         <Text style={styles.inputTitle}>Peak slope ST segment </Text>
                         <Pressable onPress={()=>alert("The slope of the peak exercise ST segment (Value 1: upsloping, Value 2: flat, Value 3: downsloping)")}>
@@ -145,8 +134,8 @@ function Prediction({navigation}) {
                             </Pressable>
                         <TextInput
                             style={styles.inputField}
-                            onChangeText={slope => setSlope(slope)}
-                            defaultValue={slope}
+                            onChangeText={slope => dispatch(setSlope(slope))}
+                            defaultValue={slope.toString()}
                             keyboardType='numeric'
                         />
                         <Text style={styles.inputTitle}>Major vessels </Text>
@@ -155,8 +144,8 @@ function Prediction({navigation}) {
                             </Pressable>
                         <TextInput
                             style={styles.inputField}
-                            onChangeText={ca => setCa(ca)}
-                            defaultValue={ca}
+                            onChangeText={ca => dispatch(setCa(ca))}
+                            defaultValue={ca.toString()}
                             keyboardType='numeric'
                         />
                         <Text style={styles.inputTitle}>Blood disorder  </Text>
@@ -165,8 +154,8 @@ function Prediction({navigation}) {
                             </Pressable>
                         <TextInput
                             style={styles.inputField}
-                            onChangeText={thal => setThal(thal)}
-                            defaultValue={thal}
+                            onChangeText={thal => dispatch(setThal(thal))}
+                            defaultValue={thal.toString()}
                             keyboardType='numeric'
                         />
                         <Pressable
