@@ -127,6 +127,7 @@ function Prediction({navigation}) {
                             style={styles.inputField}
                             onChangeText={ldpeak => dispatch(setLdpeak(ldpeak))}
                             defaultValue={ldpeak.toString()}
+                            keyboardType='numeric'
                         />
                         <Text style={styles.inputTitle}>Peak slope ST segment </Text>
                         <Pressable onPress={()=>alert("The slope of the peak exercise ST segment (Value 1: upsloping, Value 2: flat, Value 3: downsloping)")}>

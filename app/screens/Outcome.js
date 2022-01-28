@@ -46,7 +46,7 @@ function Outcome({navigation}) {
             body: valueJson
             };
 
-            fetch("https://c0l8c9qbj4.execute-api.us-east-1.amazonaws.com/Prod/predict-heart-disease", requestOptions)
+            fetch("https://en4v0epm20.execute-api.us-east-1.amazonaws.com/Prod/predict-heart-disease", requestOptions)
             .then((response) => response.json())
             .then((json) => {
                 setIsLoaded(json);
@@ -94,7 +94,7 @@ function Outcome({navigation}) {
        : 
         (<View style={styles.predictingContainer}>
             <Text style={styles.predictingText}>Fetching reult</Text>
-            <Text style={styles.predictingTextDescription}>{items.name}: Please note that the prediction label 1 means <Text style={{fontWeight: "bold"}}>Person has Heart Disease</Text> and 0 means <Text style={{fontWeight: "bold"}}>Person doesn't has Heart Disease</Text> and confidence value is its accuracy</Text>  
+            <Text style={styles.predictingTextDescription}>{items.name}: Please note that the prediction close to label 1 means <Text style={{fontWeight: "bold"}}>Person has Heart Disease</Text> and close to 0 means <Text style={{fontWeight: "bold"}}>Person doesn't has Heart Disease</Text> and confidence value is its accuracy</Text>  
             <Text style={styles.realResult}>{isloaded}</Text> 
         </View>)
     }

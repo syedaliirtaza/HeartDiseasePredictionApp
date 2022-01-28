@@ -1,15 +1,10 @@
 {
   "expo": {
-    "name": "HeartDiseaseProject",
+    "name": "HDPS",
     "slug": "HeartDiseaseProject",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./app/assets/appLogos.png",
-    "splash": {
-      "image": "./app/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
+    "icon": "./app/assets/appL.png",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -20,10 +15,7 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+      "package": "syedaliirtaza.hpdsapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"

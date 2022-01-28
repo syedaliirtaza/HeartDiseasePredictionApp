@@ -5,12 +5,12 @@ import * as firebase from "firebase";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+  apiKey: "AIzaSyAk2BXZlqH_aqGYh6mZl6aW-5dXt9J1zo8",
+  authDomain: "hdps-auth.firebaseapp.com",
+  projectId: "hdps-auth",
+  storageBucket: "hdps-auth.appspot.com",
+  messagingSenderId: "521602374320",
+  appId: "1:521602374320:web:ea06d6b3ba296457407975"
 };
 
 // Initialize Firebase
