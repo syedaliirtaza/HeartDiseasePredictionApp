@@ -49,9 +49,6 @@ function Tips({navigation}) {
                     <Text style={styles.tipsHeading}>{healthTips[4].heading}</Text>
                     <Text style={styles.tipsDescription}>{healthTips[4].description}</Text>
                 </View>
-                <Pressable style={styles.searchHospitalButton} onPress={()=> navigation.navigate('Search')}>
-                    <Text style={styles.searchHeading}>Call an ambulance (Beta)</Text>
-                </Pressable>
         </View> 
     );
 }
@@ -84,18 +81,6 @@ const styles = StyleSheet.create({
         marginTop: 5,
         marginBottom: 5
     },
-    searchHospitalButton: {
-        backgroundColor: "#C87777",
-        borderWidth: 0.4,
-        padding: 10,
-        borderRadius: 20,
-        marginTop: 10
-    },
-    searchHeading: {
-        color: "#461111",
-        fontSize: 14,
-        fontWeight: "bold"
-    }
 });
 
 export default Tips;
