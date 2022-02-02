@@ -59,6 +59,7 @@ function Login(props) {
                 <TextInput
                     placeholder='Enter your password'
                     style={styles.inputField}
+                    secureTextEntry
                     onChangeText={password => setPassword(password)}
                     defaultValue={password}
                 />

@@ -49,7 +49,18 @@ function Outcome({navigation}) {
             fetch("https://en4v0epm20.execute-api.us-east-1.amazonaws.com/Prod/predict-heart-disease", requestOptions)
             .then((response) => response.json())
             .then((json) => {
-                setIsLoaded(json);
+                const value = json;
+                const textValue = JSON.stringify(value);
+                const predictionValue = textValue.charAt(21);
+                const accuracyValue = textValue.substr(41)
+                console.log(accuracyValue)
+                if(predictionValue == 1){
+                    setIsLoaded(`Person has Chance of Heart Disease with the confidence of ${accuracyValue}`);
+                } else {
+                    if(predictionValue == 0){
+                        setIsLoaded(`Person has not a Chance of Heart Disease with the confidence of ${accuracyValue}`);
+                    }
+                }
             })
             .catch((error)=>{
                 alert(error.message)
@@ -93,8 +104,8 @@ function Outcome({navigation}) {
        )
        : 
         (<View style={styles.predictingContainer}>
-            <Text style={styles.predictingText}>Fetching reult</Text>
-            <Text style={styles.predictingTextDescription}>{items.name}: Please note that the prediction close to label 1 means <Text style={{fontWeight: "bold"}}>Person has Heart Disease</Text> and close to 0 means <Text style={{fontWeight: "bold"}}>Person doesn't has Heart Disease</Text> and confidence value is its accuracy</Text>  
+            <Text style={styles.predictingText}>Fetching result</Text>
+            <Text style={styles.predictingTextDescription}>{items.name}: Please note that the <Text style={{fontWeight: "bold"}}>confidence value shows how comfortable the model is with detecting the positive and negative class</Text></Text>  
             <Text style={styles.realResult}>{isloaded}</Text> 
         </View>)
     }
