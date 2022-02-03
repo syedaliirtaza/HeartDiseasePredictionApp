@@ -6,6 +6,9 @@ You can start the project using
 
 After that click on "Run on android" to run the aplication on emulator
 
+## Note
+Some functionalities may not work i.e the real time prediction because we had to close down the aws sagemaker in order to avoid any charges
+
 # Here are some screenshots of the application
 
 ## Welcome page
